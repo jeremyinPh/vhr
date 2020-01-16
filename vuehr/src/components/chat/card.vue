@@ -11,14 +11,14 @@
 </template>
 
 <script>
-export default {
-  name: 'card',
-  data () {
-    return {
-      user: JSON.parse(window.sessionStorage.getItem("user"))
+    export default {
+      name: 'card',
+      data () {
+        return {
+          user: JSON.parse(window.sessionStorage.getItem("user"))
+        }
+      }
     }
-  }
-}
 </script>
 
 <style lang="scss" scoped>
