@@ -5,6 +5,7 @@ import org.javaboy.vhr.model.Department;
 import java.util.List;
 
 public interface DepartmentMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Department record);
