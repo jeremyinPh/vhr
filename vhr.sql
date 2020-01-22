@@ -201,6 +201,7 @@ CREATE TABLE `employeeremove` (
 
 /*Table structure for table `employeetrain` */
 
+DROP TABLE IF EXISTS `employeetrain`;
 
 CREATE TABLE `employeetrain` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
