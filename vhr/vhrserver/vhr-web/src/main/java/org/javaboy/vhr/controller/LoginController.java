@@ -1,6 +1,11 @@
 package org.javaboy.vhr.controller;
 
+import org.javaboy.vhr.model.Book;
 import org.javaboy.vhr.model.RespBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,8 +21,32 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class LoginController {
+
+    @Autowired
+    StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    RedisTemplate redisTemplate;
+
+
     @GetMapping("/login")
     public RespBean login() {
         return RespBean.error("尚未登录，请登录!");
+    }
+
+
+    @GetMapping("/testRedis")
+    public void testRedis() {
+        ValueOperations<String, String> ops1 = stringRedisTemplate.opsForValue();
+        ops1.set("lol", "test for my website");
+        String name = ops1.get("lol");
+        System.out.println("-get name from redis--->" + name);
+
+        Book book = new Book("LOL 三部曲", "Jeremy", 99.99f);
+        ValueOperations ops2 = redisTemplate.opsForValue();
+        ops2.set("bb", book);
+
+        Book bb = (Book) ops2.get("bb");
+        System.out.println(bb);
     }
 }

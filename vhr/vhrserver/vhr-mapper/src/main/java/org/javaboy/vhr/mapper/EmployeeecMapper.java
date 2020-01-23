@@ -14,4 +14,6 @@ public interface EmployeeecMapper {
     int updateByPrimaryKeySelective(Employeeec record);
 
     int updateByPrimaryKey(Employeeec record);
+
+    int getSameNameCount(String name);
 }

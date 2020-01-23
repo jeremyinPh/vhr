@@ -1,6 +1,7 @@
 package org.javaboy.vhr.service;
 
 import org.javaboy.vhr.mapper.EmployeeMapper;
+import org.javaboy.vhr.mapper.EmployeeecMapper;
 import org.javaboy.vhr.model.Employee;
 import org.javaboy.vhr.model.RespPageBean;
 import org.slf4j.Logger;
@@ -29,6 +30,10 @@ public class EmployeeService {
     EmployeeMapper employeeMapper;
     @Autowired
     RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    EmployeeecMapper employeeecMapper;
+
     public final static Logger logger = LoggerFactory.getLogger(EmployeeService.class);
     SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
     SimpleDateFormat monthFormat = new SimpleDateFormat("MM");
