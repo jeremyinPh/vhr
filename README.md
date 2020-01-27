@@ -1,3 +1,8 @@
+#### 需要继续学习的地方
+[根据表结构生成mapper model  service层  带分页等功能](https://github.com/lihengming/spring-boot-api-project-seed)
+
+
+
 ###写在最前面的话 
 有后端和web基础, 也有安装基础, 为何不再努力一把成为全栈呢? 
 
